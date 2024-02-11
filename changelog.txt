@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2024.02.09
+  Features:
+    - Added a changelog
+    - Added new names
+    - Added new messages
+    - You can now change the biter name chances and message chances in the mod settings
+  Changes:
+    - Biters are now only named with 25% chance by default
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2024.02.09
+  Features:
+    - Initial version
