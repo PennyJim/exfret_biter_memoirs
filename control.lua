@@ -4,16 +4,27 @@ require("scripts/initialize_unit")
 require("scripts/memoir")
 require("scripts/nametags")
 
+local function ensure_globals()
+    if global.last_memoir_tick == nil then
+        global.last_memoir_tick = 0
+    end
+
+    if global.unit_info == nil then
+        global.unit_info = {}
+    end
+end
+
 script.on_init(function ()
     add_names()
 
-    global.units_to_names = {}
-    global.units_to_entities = {}
+    ensure_globals()
 end)
 
 script.on_configuration_changed(function()
-    game.print("Biter Memoirs: Configuration changed, reloading names list.")
+    game.print("Biter Memoirs: Mod configuration changed, loading names list.")
     add_names()
+
+    ensure_globals()
 end)
 
 script.on_event(defines.events.on_entity_spawned, function(event)
@@ -23,14 +34,13 @@ end)
 script.on_event(defines.events.on_entity_died, function(event)
     if event.entity.type == "unit" then
         -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
-        if global.units_to_names[event.entity.unit_number] == "Pikachu" or global.units_to_names[event.entity.unit_number] == "Pikachu2" then
+        if global.unit_info[event.entity.unit_number] ~= nil and (global.unit_info[event.entity.unit_number].name == "Pikachu" or global.unit_info[event.entity.unit_number].name == "Pikachu2") then
             show_memoir(event)
-        elseif math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
+        elseif game.tick - global.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
             show_memoir(event)
         end
 
-        global.units_to_names[event.entity.unit_number] = nil
-        global.units_to_entities[event.entity.unit_number] = nil
+        global.unit_info[event.entity.unit_number] = nil
     end
 end)
 
@@ -38,7 +48,7 @@ script.on_event(defines.events.on_tick, function(event)
     update_nametags()
 end)
 
---[[script.on_event("show-biter-info", function(event)
+--[[script.on_evens("show-biter-info", function(event)
     if not game.players[event.player_index].gui.screen.biter_stats_panel then
         global.biter_panel_already_shown = true
 

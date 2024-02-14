@@ -1,7 +1,13 @@
 function show_memoir(event)
     local biter_memoir = global.biter_memoirs[math.random(1, #global.biter_memoirs)]
 
-    local my_name = global.units_to_names[event.entity.unit_number] or global.biter_names[math.random(1, #global.biter_names)]
+    local my_name
+    if global.unit_info[event.entity.unit_number] ~= nil then
+        my_name = global.unit_info[event.entity.unit_number].name
+    end
+    if my_name == nil then
+        my_name = global.biter_names[math.random(1, #global.biter_names)]
+    end
 
     -- Test if the biter has a special memoir
     if global.biter_memoirs_special[my_name] ~= nil then

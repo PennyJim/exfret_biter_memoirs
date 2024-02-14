@@ -16,5 +16,15 @@ data:extend({
         maximum_value = 1,
         setting_type = "runtime-global",
         default_value = 0.03
+    },
+    {
+        type = "double-setting",
+        name = "exfret-biter-memoirs-min-message-delay",
+        localised_name = "Minimum Message Delay",
+        localised_description = "Minimum time (in seconds) after one biter memoir message before another can appear.",
+        minimum_value = 0,
+        maximum_value = 3600,
+        setting_type = "runtime-global",
+        default_value = 3
     }
 })

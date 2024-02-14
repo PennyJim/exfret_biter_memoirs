@@ -207,7 +207,11 @@ function add_names()
         "Steve",
         "Elon Musk",
         "Fermat",
-        "Nova"
+        "Nova",
+        "Isabelle",
+        "Foxabilo",
+        "Carl Sagan",
+        "sassxolotl"
     }
 
     global.biter_name_pronouns = {
@@ -418,7 +422,11 @@ function add_names()
         ["Steve"] = "male",
         ["Elon Musk"] = "male",
         ["Fermat"] = "male",
-        ["Nova"] = "male"
+        ["Nova"] = "male",
+        ["Isabelle"] = "female",
+        ["Foxabilo"] = "male",
+        ["Carl Sagan"] = "male",
+        ["sassxolotl"] = "male"
     }
 
     global.biter_memoirs = {
@@ -468,15 +476,29 @@ function add_names()
         "wonders who will take care of PRONOUN_POSSESSIVE parrot now that PRONOUN_SUBJECT are gone.",
         "rehabilitated stray kittens.",
         "was the proud owner of a pet goat named bailey.",
-        "has a wife named Anna who doesn't know how to explain to the kids why her partner isn't coming home.",
+        "thinks of PRONOUN_POSSESSIVE wife, Anna in PRONOUN_POSSESSIVE dying moments... How will she explain this to the kids?",
         "wonders if you know that you too are a biter beneath all that armor.",
-        "holds PRONOUN_POSSESSIVE friend's hand as PRONOUN_SUBJECT pass away.",
+        "holds PRONOUN_POSSESSIVE friend's hand as PRONOUN_SUBJECT passes away.",
         "was helping exfret out with the biter memoirs mod before PRONOUN_POSSESSIVE untimely doom.",
         "is behind you.",
         "had as PRONOUN_POSSESSIVE only hope in the world to become your pet biter, curled up next to the warmth of an assembler.",
         "regrets not being able to compliment your beautiful eyes before PRONOUN_SUBJECT passed.",
         "doesn't report to PRONOUN_POSSESSIVE job next day; no one notices.",
-        "was still on hold with the power company about a metering problem when they left this world."
+        "was still on hold with the power company about a metering problem when they left this world.",
+        "was just trying to provide for PRONOUN_POSSESSIVE 9 children.",
+        "was looking forward to PRONOUN_POSSESSIVE birthday party tonight.",
+        "wanted to be a comedian, but now they can only be a corpse.",
+        "had a cheesecake in the fridge for later.",
+        "was a wonderful person who was kind to people and animals.",
+        "had just had leg surgery and was able to walk for the first time in months.",
+        "was recently elected mayor of their nest.",
+        "was excited to watch the finale of PRONOUN_POSSESSIVE favorite tv show today.",
+        "wonders if you realize that you're a monster.",
+        "was martyred.",
+        "tried their best and was found wanting.",
+        "is in Valhalla tonight for dinner... as the main course.",
+        "failed to reclaim their former glory.",
+        "dreamed of being a hero as a kid."
     }
 
     global.biter_memoirs_special = {
@@ -491,6 +513,10 @@ function add_names()
         ["Pikachu"] = "Pikachu was returning home when you killed him.",
         ["Pikachu2"] = "Pikachu2 was returning home when you killed him.",
         ["Varik"] = "Varik woofs one last time.",
-        ["Asher"] = "Asher was reborn amongst the stars"
+        ["Asher"] = "Asher was reborn amongst the stars",
+        ["DoshDoshington"] = "DoshDoshington had actually been secretly making a Pyanodons video, it will now never be released.",
+        ["Elon Musk"] = "Elon Musk had just come up with a funny tweet that would finally make everyone like him.",
+        ["Carl Sagan"] = "Carl Sagan was a pioneer in the field of exobiology and would often speculate with his friends about how aliens might communicate.",
+        ["sassxolotl"] = "sassxolotl is appreciative of his long life; most other engineers are more efficient and would have killed him sooner."
     }
 end
