@@ -490,6 +490,7 @@ function add_names()
         ["Good Boi"] = "Good Boi is no longer a good boi.",
         ["Pikachu"] = "Pikachu was returning home when you killed him.",
         ["Pikachu2"] = "Pikachu2 was returning home when you killed him.",
-        ["Varik"] = "Varik woofs one last time."
+        ["Varik"] = "Varik woofs one last time.",
+        ["Asher"] = "Asher was reborn amongst the stars"
     }
 end
