@@ -206,7 +206,8 @@ function add_names()
         "Vaporeon",
         "Steve",
         "Elon Musk",
-        "Fermat"
+        "Fermat",
+        "Nova"
     }
 
     global.biter_name_pronouns = {
@@ -277,7 +278,7 @@ function add_names()
         ["Daisy"] = "female",
         ["Bubbles"] = "female",
         ["Ava"] = "female",
-        ["Asher"] = "male",
+        ["Asher"] = "their",
         ["Isaiah"] = "male",
         ["Juan"] = "male",
         ["Maria"] = "female",
@@ -416,7 +417,8 @@ function add_names()
         ["Vaporeon"] = "female",
         ["Steve"] = "male",
         ["Elon Musk"] = "male",
-        ["Fermat"] = "male"
+        ["Fermat"] = "male",
+        ["Nova"] = "male"
     }
 
     global.biter_memoirs = {
@@ -473,7 +475,8 @@ function add_names()
         "is behind you.",
         "had as PRONOUN_POSSESSIVE only hope in the world to become your pet biter, curled up next to the warmth of an assembler.",
         "regrets not being able to compliment your beautiful eyes before PRONOUN_SUBJECT passed.",
-        "doesn't report to PRONOUN_POSSESSIVE job next day; no one notices."
+        "doesn't report to PRONOUN_POSSESSIVE job next day; no one notices.",
+        "was still on hold with the power company about a metering problem when they left this world."
     }
 
     global.biter_memoirs_special = {

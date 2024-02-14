@@ -12,7 +12,7 @@ function show_memoir(event)
     local pronouns = global.biter_name_pronouns[my_name] or "their"
     if pronouns ~= "male" and pronouns ~= "female" and pronouns ~= "their" then
         local possible_pronouns = {"male", "female", "their"}
-        prounouns = possible_pronouns[math.random(3)]
+        pronouns = possible_pronouns[math.random(1, 3)]
     end
     local possessive, subject, object
     if pronouns == "their" then
