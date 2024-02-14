@@ -10,7 +10,8 @@ script.on_init(function ()
     global.units_to_entities = {}
 end)
 
-script.on_configuration_changed(function ()
+script.on_configuration_changed(function()
+    game.print("Configuration changed... reloading names")
     add_names()
 end)
 
