@@ -21,7 +21,10 @@ end)
 
 script.on_event(defines.events.on_entity_died, function(event)
     if event.entity.type == "unit" then
-        if math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
+        -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
+        if global.units_to_names[event.entity.unit_number] == "Pikachu" or global.units_to_names[event.entity.unit_number] == "Pikachu2" then
+            show_memoir(event)
+        elseif math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
             show_memoir(event)
         end
 

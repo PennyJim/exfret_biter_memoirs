@@ -205,7 +205,8 @@ function add_names()
         "Pikachu2",
         "Vaporeon",
         "Steve",
-        "Elon Musk"
+        "Elon Musk",
+        "Fermat"
     }
 
     global.biter_name_pronouns = {
@@ -414,7 +415,8 @@ function add_names()
         ["Pikachu2"] = "male",
         ["Vaporeon"] = "female",
         ["Steve"] = "male",
-        ["Elon Musk"] = "male"
+        ["Elon Musk"] = "male",
+        ["Fermat"] = "male"
     }
 
     global.biter_memoirs = {
@@ -470,6 +472,21 @@ function add_names()
         "was helping exfret out with the biter memoirs mod before PRONOUN_POSSESSIVE untimely doom.",
         "is behind you.",
         "had as PRONOUN_POSSESSIVE only hope in the world to become your pet biter, curled up next to the warmth of an assembler.",
-        "regrets not being able to compliment your beautiful eyes before PRONOUN_SUBJECT passed."
+        "regrets not being able to compliment your beautiful eyes before PRONOUN_SUBJECT passed.",
+        "doesn't report to PRONOUN_POSSESSIVE job next day; no one notices."
+    }
+
+    global.biter_memoirs_special = {
+        ["EmilyFlambe"] = "Emily Flambe was streaming the final episode of her space exploration run when she was ruthlessly murdered.",
+        ["Nefrums"] = "Nefrums was just about to be the first one to beat factorio singleplayer in under an hour.",
+        ["Nilaus"] = "Nilaus had just discovered a critical error in one of his 'base in a book' blueprints, but now no one will ever know what it was.",
+        ["Fermat"] = "Fermat was finally writing down the proof to his famous theorem; now it will forever be left in the margins.",
+        ["Scoob"] = "Scoob will never eat another snack again.",
+        ["friendcalledfive"] = "friendcalledfive almost reached his millionth rocket launch.",
+        ["Factorio"] = "Factorio was just about to go on sale when you killed them.",
+        ["Good Boi"] = "Good Boi is no longer a good boi.",
+        ["Pikachu"] = "Pikachu was returning home when you killed him.",
+        ["Pikachu2"] = "Pikachu2 was returning home when you killed him.",
+        ["Varik"] = "Varik woofs one last time."
     }
 end
