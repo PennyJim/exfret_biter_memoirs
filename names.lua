@@ -200,7 +200,11 @@ function add_names()
         "Ronald",
         "Harry",
         "Hermione",
-        "PokTux"
+        "PokTux",
+        "Pikachu",
+        "Pikachu2",
+        "Vaporeon",
+        "Steve"
     }
 
     global.biter_memoirs = {
@@ -252,6 +256,10 @@ function add_names()
         "was the proud owner of a pet goat named bailey.",
         "has a wife named Anna who doesn't know how to explain to the kids why her partner isn't coming home.",
         "wonders if you know that you too are a biter beneath all that armor.",
-        "holds their friend's hand as they pass away."
+        "holds their friend's hand as they pass away.",
+        "was helping exfret out with the biter memoirs mod before their untimely doom.",
+        "is behind you.",
+        "had as their only hope in the world to become your pet biter, curled up next to the warmth of an assembler.",
+        "regrets not being able to compliment your beautiful eyes before they passed."
     }
 end
