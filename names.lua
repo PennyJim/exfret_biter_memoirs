@@ -527,5 +527,6 @@ function add_names()
         ["BlackATM"] = "BlackATM was this close to finishing the newest update to his mod, but was swiftly taken out by Piercing Ammo #2349",
         ["Cobai"] = "Cobai was about to announce the next Massive Multiplayer Event.",
         ["sassxolotl"] = "sassxolotl is appreciative of his long life; most other engineers are more efficient and would have killed him sooner.",
+        ["Earendel"] = "Earendel pauses work on space exploration to die at your hand."
     }
 end

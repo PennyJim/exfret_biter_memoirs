@@ -61,14 +61,16 @@ script.on_event(defines.events.on_entity_died, function(event)
     validate_unit(event.entity)
 
     if event.entity.type == "unit" then
-        -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
-        if global.unit_info[event.entity.unit_number] ~= nil and (global.unit_info[event.entity.unit_number].name == "Pikachu" or global.unit_info[event.entity.unit_number].name == "Pikachu2") then
-            show_memoir(event)
-        elseif game.tick - global.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
-            show_memoir(event)
-        end
+        if global.unit_info[event.entity.unit_number] ~= nil and global.unit_info[event.entity.unit_number].show_name then
+            -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
+            if global.unit_info[event.entity.unit_number] ~= nil and (global.unit_info[event.entity.unit_number].name == "Pikachu" or global.unit_info[event.entity.unit_number].name == "Pikachu2") then
+                show_memoir(event)
+            elseif game.tick - global.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
+                show_memoir(event)
+            end
 
-        global.unit_info[event.entity.unit_number] = nil
+            global.unit_info[event.entity.unit_number] = nil
+        end
     end
 end)
 

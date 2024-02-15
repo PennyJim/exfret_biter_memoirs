@@ -15,7 +15,7 @@ data:extend({
         minimum_value = 0,
         maximum_value = 1,
         setting_type = "runtime-global",
-        default_value = 0.03
+        default_value = 0.07
     },
     {
         type = "double-setting",
