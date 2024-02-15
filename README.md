@@ -25,56 +25,14 @@ Inspired by https://xkcd.com/873/
 
 ## Help
 
-<Discord Link>
+<Discord [Link](https://discord.gg/ebHX7Yek9T)>
 
 ## Authors
 
 exfret
 
+Contributors: Cobai
+
 ## Version History
 
-*Version: 1.0.3
-
-*Date: 2024.02.14
-
-  *Features:
-
-    - Added pronoun support
-
-    - Added custom memoirs for biters with certain names
-
-*Version: 1.0.2
-
-*Date: 2024.02.14
-
-  *Features:
-
-    - Separated out files to make collaboration easier
-
-    - Added a few more names and memoirs
-
-*Version: 1.0.1
-
-*Date: 2024.02.09
-
-  *Features:
-
-    - Added a changelog
-
-    - Added new names
-
-    - Added new messages
-
-    - You can now change the biter name chances and message chances in the mod settings
-
-  *Changes:
-
-    - Biters are now only named with 25% chance by default
-
-*Version: 1.0.0
-
-*Date: 2024.02.09
-
-  *Features:
-  
-    - Initial version
+See changelog.txt

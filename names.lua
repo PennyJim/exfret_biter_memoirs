@@ -211,8 +211,10 @@ function add_names()
         "Isabelle",
         "Foxabilo",
         "Carl Sagan",
-        "sassxolotl",
-        "Cobai"
+        "Cobai",
+        "BlackATM",
+        "Lebothegizebo",
+        "sassxolotl"
     }
 
     global.biter_name_pronouns = {
@@ -427,8 +429,10 @@ function add_names()
         ["Isabelle"] = "female",
         ["Foxabilo"] = "male",
         ["Carl Sagan"] = "male",
+        ["Cobai"] = "male",
+        ["BlackATM"] = "male",
         ["sassxolotl"] = "male",
-        ["Cobai"] = "male"
+        ["Lebothegizebo"] = "male"
     }
 
     global.biter_memoirs = {
@@ -519,7 +523,9 @@ function add_names()
         ["DoshDoshington"] = "DoshDoshington had actually been secretly making a Pyanodons video, it will now never be released.",
         ["Elon Musk"] = "Elon Musk had just come up with a funny tweet that would finally make everyone like him.",
         ["Carl Sagan"] = "Carl Sagan was a pioneer in the field of exobiology and would often speculate with his friends about how aliens might communicate.",
+        ["Lebothegizebo"] = "Lebothegizebo is now unable to fulfill his destiny of chewing on your power poles.",
+        ["BlackATM"] = "BlackATM was this close to finishing the newest update to his mod, but was swiftly taken out by Piercing Ammo #2349",
+        ["Cobai"] = "Cobai was about to announce the next Massive Multiplayer Event.",
         ["sassxolotl"] = "sassxolotl is appreciative of his long life; most other engineers are more efficient and would have killed him sooner.",
-        ["Cobai"] = "Cobai was about to announce the next Massive Multiplayer Event."
     }
 end
