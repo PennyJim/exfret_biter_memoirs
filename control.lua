@@ -14,6 +14,32 @@ local function ensure_globals()
     end
 end
 
+function validate_unit(entity)
+
+    if not entity.valid then
+        global.unit_info[entity.unit_number] = nil
+        return
+    elseif entity.type ~= "unit" then
+        return
+    end
+
+    if global.unit_info[entity.unit_number] == nil then
+        initialize_unit({entity = entity, keep_hidden = true})
+    end
+
+    local table_info = global.unit_info[entity.unit_number]
+
+    if table_info.name == nil then
+        table_info.name = global.biter_names[math.random(1, #global.biter_names)]
+    end
+    if table_info.entity == nil then
+        table_info.entity = entity
+    end
+    if table_info.birth == nil then
+        table_info.birth = game.tick
+    end
+end
+
 script.on_init(function ()
     add_names()
 
@@ -32,6 +58,8 @@ script.on_event(defines.events.on_entity_spawned, function(event)
 end)
 
 script.on_event(defines.events.on_entity_died, function(event)
+    validate_unit(event.entity)
+
     if event.entity.type == "unit" then
         -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
         if global.unit_info[event.entity.unit_number] ~= nil and (global.unit_info[event.entity.unit_number].name == "Pikachu" or global.unit_info[event.entity.unit_number].name == "Pikachu2") then
@@ -48,10 +76,8 @@ script.on_event(defines.events.on_tick, function(event)
     update_nametags()
 end)
 
---[[script.on_evens("show-biter-info", function(event)
+script.on_event("show-biter-info", function(event)
     if not game.players[event.player_index].gui.screen.biter_stats_panel then
-        global.biter_panel_already_shown = true
-
         if event.selected_prototype ~= nil and event.selected_prototype.derived_type == "unit" then
             local search_distance = 10
             local possible_selections = game.players[event.player_index].surface.find_entities_filtered({position = event.cursor_position, radius = search_distance, type = "unit"})
@@ -67,10 +93,11 @@ end)
             end
 
             if closest_unit ~= nil then
+                validate_unit(closest_unit)
                 show_biter_gui(game.players[event.player_index], closest_unit)
             end
         end
     else
         game.players[event.player_index].gui.screen.biter_stats_panel.destroy()
     end
-end)]]
+end)
