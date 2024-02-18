@@ -214,7 +214,11 @@ function add_names()
         "Cobai",
         "BlackATM",
         "Lebothegizebo",
-        "sassxolotl"
+        "sassxolotl",
+        "Randall",
+        "Sun Tzu",
+        "Debbie",
+        "Shelby"
     }
 
     global.biter_name_pronouns = {
@@ -432,7 +436,11 @@ function add_names()
         ["Cobai"] = "male",
         ["BlackATM"] = "male",
         ["sassxolotl"] = "male",
-        ["Lebothegizebo"] = "male"
+        ["Lebothegizebo"] = "male",
+        ["Randall"] = "male",
+        ["Sun Tzu"] = "male",
+        ["Debbie"] = "female",
+        ["Shelby"] = "female"
     }
 
     global.biter_memoirs = {
@@ -504,7 +512,13 @@ function add_names()
         "tried their best and was found wanting.",
         "is in Valhalla tonight for dinner... as the main course.",
         "failed to reclaim their former glory.",
-        "dreamed of being a hero as a kid."
+        "dreamed of being a hero as a kid.",
+        "enjoyed walks by the ocean.",
+        "was scared of water, and terrified by fire.",
+        "had an acceptance letter from PRONOUN_POSSESSIVE dream university waiting to be read back home.",
+        "was a first-generation college student.",
+        "was relieved of PRONOUN_POSSESSIVE chronic back pain.",
+        "never had a sense of humor and was always made fun of for it."
     }
 
     global.biter_memoirs_special = {
@@ -527,6 +541,8 @@ function add_names()
         ["BlackATM"] = "BlackATM was this close to finishing the newest update to his mod, but was swiftly taken out by Piercing Ammo #2349",
         ["Cobai"] = "Cobai was about to announce the next Massive Multiplayer Event.",
         ["sassxolotl"] = "sassxolotl is appreciative of his long life; most other engineers are more efficient and would have killed him sooner.",
-        ["Earendel"] = "Earendel pauses work on space exploration to die at your hand."
+        ["Earendel"] = "Earendel pauses work on space exploration to die at your hand.",
+        ["Randall"] = "Randall's webcomic was just starting to take off.",
+        ["Sun Tzu"] = "War wasn't the answer. It was the question. And the answer is yes. - Sun Tzu"
     }
 end
