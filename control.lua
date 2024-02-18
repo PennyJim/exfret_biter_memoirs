@@ -14,10 +14,12 @@ local function ensure_globals()
     end
 end
 
-function validate_unit(entity)
+function validate_unit(entity, unit_number)
 
     if not entity.valid then
-        global.unit_info[entity.unit_number] = nil
+        if unit_number ~= nil then
+            global.unit_info[entity.unit_number] = nil
+        end
         return
     elseif entity.type ~= "unit" then
         return
