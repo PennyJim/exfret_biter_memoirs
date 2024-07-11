@@ -1,8 +1,10 @@
 ---@class MemoirGlobal
 ---@field biter_names string[]
----@field biter_name_pronouns table<string,"male"|"female"|"their"|"either">
+---@field biter_name_pronouns table<string,support_pronouns|"either">
 ---@field biter_memoir_count integer
 ---@field biter_memoirs_special table<string,true>
+
+---@alias support_pronouns "male"|"female"|"their"
 
 function add_names()
     global.biter_names = {
