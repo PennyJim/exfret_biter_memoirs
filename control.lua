@@ -26,9 +26,9 @@ local function ensure_globals()
 end
 
 ---@param entity LuaEntity
-function validate_unit(entity)
+---@param unit_number integer?
+function validate_unit(entity, unit_number)
     if not entity.valid then
-        local unit_number = entity.unit_number
         if unit_number ~= nil then
             global.unit_info[unit_number] = nil
         end
@@ -36,7 +36,7 @@ function validate_unit(entity)
     elseif entity.type ~= "unit" then
         return
     end
-    local unit_number = entity.unit_number --[[@as integer]]
+    unit_number = unit_number or entity.unit_number --[[@as integer]]
 
     if global.unit_info[entity.unit_number] == nil then
         initialize_unit({entity = entity, keep_hidden = true})

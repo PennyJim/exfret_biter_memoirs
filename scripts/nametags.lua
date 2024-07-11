@@ -1,7 +1,7 @@
 function update_nametags()
     for unit_number, info_table in pairs(global.unit_info) do
         if info_table.entity ~= nil then
-            validate_unit(info_table.entity)
+            validate_unit(info_table.entity, unit_number)
 
             if info_table.show_name then
                 if info_table.entity == nil or not info_table.entity.valid then
