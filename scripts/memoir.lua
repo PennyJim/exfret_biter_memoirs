@@ -19,7 +19,8 @@ function show_memoir(event)
     end
 
     local pronouns = global.biter_name_pronouns[my_name] or "their"
-    if pronouns ~= "male" and pronouns ~= "female" and pronouns ~= "their" then
+    if pronouns == "either" then
+        ---@type ("male"|"female"|"their")[]
         local possible_pronouns = {"male", "female", "their"}
         pronouns = possible_pronouns[math.random(1, 3)]
     end
