@@ -316,7 +316,10 @@ function add_names()
         "Swifty",
         "Carolyn",
         "Ash",
-        "Luca"
+        "Luca",
+        "PennyJim",
+        "Fireball",
+        "GGs"
     }
 
     global.biter_name_pronouns = {
@@ -636,7 +639,10 @@ function add_names()
         ["Swifty"] = "either",
         ["Carolyn"] = "female",
         ["Ash"] = "male",
-        ["Luca"] = "male"
+        ["Luca"] = "male",
+        ["PennyJim"] = "either",
+        ["Fireball"] = "male",
+        ["GGs"] = "their"
     }
 
     global.biter_memoirs = {
@@ -714,7 +720,32 @@ function add_names()
         "had an acceptance letter from PRONOUN_POSSESSIVE dream university waiting to be read back home.",
         "was a first-generation college student.",
         "was relieved of PRONOUN_POSSESSIVE chronic back pain.",
-        "never had a sense of humor and was always made fun of for it."
+        "never had a sense of humor and was always made fun of for it.",
+        "was unalived.",
+        "was a well-known champion in the competitive scrabble community.",
+        "slept on PRONOUN_POSSESSIVE side, but died facing down.",
+        "had been hoping to repair PRONOUN_POSSESSIVE broken relationship with PRONOUN_POSSESSIVE ex.",
+        "hates you.",
+        "is about to come back from the dead.",
+        "experience PRONOUN_POSSESSIVE life flashing before PRONOUN_POSSESSIVE eyes. It was bittersweet.",
+        "forgot to pray today.",
+        "ate a full breakfast that will never be digested.",
+        "was the last one with access to the Factorio source code.",
+        "liked to look up at the stars at night.",
+        "resisted the urge to eat cake today to stay fit. Not that it matters now.",
+        "was freshly spawned.",
+        "had a pull request to review.",
+        "just became a twitch affiliate.",
+        "had 3,237 unread emails.",
+        "manufactured antique furniture.",
+        "wishes exfret thought of a better memoir for PRONOUN_OBJECT.",
+        "was still emotionally recovering from the divorce.",
+        "was sorry to bug you. (Get it?)",
+        "just wanted to tell you how PRONOUN_SUBJECT was feeling. Gotta make you understand. Never gonna give you up. Never gonna let you down. Never gonna run around and desert you.",
+        "rotated a belt somewhere in your base as revenge.",
+        "loved the color blue, but PRONOUN_POSSESSIVE favorite was magenta.",
+        "doesn't even care.",
+        "was a teacher who liked to decorate PRONOUN_POSSESSIVE classroom with grateful letters from PRONOUN_POSSESSIVE students."
     }
 
     global.biter_memoirs_special = {
@@ -739,6 +770,9 @@ function add_names()
         ["sassxolotl"] = "sassxolotl is appreciative of his long life; most other engineers are more efficient and would have killed him sooner.",
         ["Earendel"] = "Earendel pauses work on space exploration to die at your hand.",
         ["Randall"] = "Randall's webcomic was just starting to take off.",
-        ["Sun Tzu"] = "War wasn't the answer. It was the question. And the answer is yes. - Sun Tzu"
+        ["Sun Tzu"] = "War wasn't the answer. It was the question. And the answer is yes. - Sun Tzu",
+        ["PennyJim"] = "PennyJim was so engrossed in their project they forgot to not die.",
+        ["Fireball"] = "Fireball will forever be known for his deep contributions to the Factorio community.",
+        ["GGs"] = "GGs just increased your science multiplier."
     }
 end
