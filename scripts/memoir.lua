@@ -11,10 +11,13 @@ function show_memoir(event)
         my_name = global.biter_names[math.random(1, #global.biter_names)]
     end
 
+    ---@type string
+    local locale_key
     -- Test if the biter has a special memoir
-    if global.biter_memoirs_special[my_name] ~= nil then
-        game.print(global.biter_memoirs_special[my_name])
-        return
+    if global.biter_memoirs_special[my_name] then
+        locale_key = "biter-memoirs-special."..my_name
+    else
+        locale_key = "biter-memoirs."..math.random(1, global.biter_memoir_count)
     end
 
     local pronouns = global.biter_name_pronouns[my_name] or "their"
@@ -26,7 +29,7 @@ function show_memoir(event)
 
     ---@type LocalisedString
     local message = {
-        "biter-memoirs."..math.random(1, 76),
+        locale_key,
         my_name,
         {pronouns.."-possesive"},
         {pronouns.."-subject"},
