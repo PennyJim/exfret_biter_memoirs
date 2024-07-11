@@ -1,3 +1,9 @@
+---@class MemoirGlobal
+---@field biter_names string[]
+---@field biter_name_pronouns table<string,string>
+---@field biter_memoirs string[]
+---@field biter_memoirs_special table<string,string>
+
 function add_names()
     global.biter_names = {
         "George",
