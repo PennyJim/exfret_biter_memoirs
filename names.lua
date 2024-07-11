@@ -327,7 +327,6 @@ function add_names()
         "Luca",
         "PennyJim",
         "Fireball",
-        "GGs"
     }
 
     global.biter_name_pronouns = {
@@ -650,7 +649,6 @@ function add_names()
         ["Luca"] = "male",
         ["PennyJim"] = "either",
         ["Fireball"] = "male",
-        ["GGs"] = "their"
     }
 
     --- The number here should match the highest locale number
