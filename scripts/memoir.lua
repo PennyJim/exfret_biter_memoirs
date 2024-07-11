@@ -1,9 +1,12 @@
+---@param event EventData.on_entity_died
 function show_memoir(event)
     local biter_memoir = global.biter_memoirs[math.random(1, #global.biter_memoirs)]
+    local unit_number = event.entity.unit_number --[[@as integer]]
 
+    ---@type string
     local my_name
-    if global.unit_info[event.entity.unit_number] ~= nil then
-        my_name = global.unit_info[event.entity.unit_number].name
+    if global.unit_info[unit_number] ~= nil then
+        my_name = global.unit_info[unit_number].name
     end
     if my_name == nil then
         my_name = global.biter_names[math.random(1, #global.biter_names)]
@@ -20,6 +23,7 @@ function show_memoir(event)
         local possible_pronouns = {"male", "female", "their"}
         pronouns = possible_pronouns[math.random(1, 3)]
     end
+    ---@type string,string,string
     local possessive, subject, object
     if pronouns == "their" then
         possessive = "their"

@@ -1,3 +1,4 @@
+---@param event {entity:LuaEntity, keep_hidden:boolean}
 function initialize_unit(event)
     if event.entity.type == "unit" then
         local biter_name = global.biter_names[math.random(1, #global.biter_names)]
@@ -6,7 +7,7 @@ function initialize_unit(event)
             show_name = true
         end
 
-        global.unit_info[event.entity.unit_number] = {
+        global.unit_info[event.entity.unit_number--[[@as integer]]] = {
             name = biter_name,
             show_name = show_name,
             entity = event.entity,
