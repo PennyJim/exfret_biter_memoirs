@@ -2,7 +2,7 @@
 ---@field biter_names string[]
 ---@field biter_name_pronouns table<string,"male"|"female"|"their"|"either">
 ---@field biter_memoir_count integer
----@field biter_memoirs_special table<string,string>
+---@field biter_memoirs_special table<string,true>
 
 function add_names()
     global.biter_names = {
@@ -649,27 +649,27 @@ function add_names()
     global.biter_memoir_count = 75 + 1
 
     global.biter_memoirs_special = {
-        ["EmilyFlambe"] = "Emily Flambe was streaming the final episode of her space exploration run when she was ruthlessly murdered.",
-        ["Nefrums"] = "Nefrums was just about to be the first one to beat factorio singleplayer in under an hour.",
-        ["Nilaus"] = "Nilaus had just discovered a critical error in one of his 'base in a book' blueprints, but now no one will ever know what it was.",
-        ["Fermat"] = "Fermat was finally writing down the proof to his famous theorem; now it will forever be left in the margins.",
-        ["Scoob"] = "Scoob will never eat another snack again.",
-        ["friendcalledfive"] = "friendcalledfive almost reached his millionth rocket launch.",
-        ["Factorio"] = "Factorio was just about to go on sale when you killed them.",
-        ["Good Boi"] = "Good Boi is no longer a good boi.",
-        ["Pikachu"] = "Pikachu was returning home when you killed him.",
-        ["Pikachu2"] = "Pikachu2 was returning home when you killed him.",
-        ["Varik"] = "Varik woofs one last time.",
-        ["Asher"] = "Asher was reborn amongst the stars",
-        ["DoshDoshington"] = "DoshDoshington had actually been secretly making a Pyanodons video, it will now never be released.",
-        ["Elon Musk"] = "Elon Musk had just come up with a funny tweet that would finally make everyone like him.",
-        ["Carl Sagan"] = "Carl Sagan was a pioneer in the field of exobiology and would often speculate with his friends about how aliens might communicate.",
-        ["Lebothegizebo"] = "Lebothegizebo is now unable to fulfill his destiny of chewing on your power poles.",
-        ["BlackATM"] = "BlackATM was this close to finishing the newest update to his mod, but was swiftly taken out by Piercing Ammo #2349",
-        ["Cobai"] = "Cobai was about to announce the next Massive Multiplayer Event.",
-        ["sassxolotl"] = "sassxolotl is appreciative of his long life; most other engineers are more efficient and would have killed him sooner.",
-        ["Earendel"] = "Earendel pauses work on space exploration to die at your hand.",
-        ["Randall"] = "Randall's webcomic was just starting to take off.",
-        ["Sun Tzu"] = "War wasn't the answer. It was the question. And the answer is yes. - Sun Tzu"
+        ["EmilyFlambe"] = true,
+        ["Nefrums"] = true,
+        ["Nilaus"] = true,
+        ["Fermat"] = true,
+        ["Scoob"] = true,
+        ["friendcalledfive"] = true,
+        ["Factorio"] = true,
+        ["Good Boi"] = true,
+        ["Pikachu"] = true,
+        ["Pikachu2"] = true,
+        ["Varik"] = true,
+        ["Asher"] = true,
+        ["DoshDoshington"] = true,
+        ["Elon Musk"] = true,
+        ["Carl Sagan"] = true,
+        ["Lebothegizebo"] = true,
+        ["BlackATM"] = true,
+        ["Cobai"] = true,
+        ["sassxolotl"] = true,
+        ["Earendel"] = true,
+        ["Randall"] = true,
+        ["Sun Tzu"] = true,
     }
 end
