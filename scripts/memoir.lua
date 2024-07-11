@@ -1,6 +1,5 @@
 ---@param event EventData.on_entity_died
 function show_memoir(event)
-    local biter_memoir = global.biter_memoirs[math.random(1, #global.biter_memoirs)]
     local unit_number = event.entity.unit_number --[[@as integer]]
 
     ---@type string
@@ -24,21 +23,15 @@ function show_memoir(event)
         local possible_pronouns = {"male", "female", "their"}
         pronouns = possible_pronouns[math.random(1, 3)]
     end
-    ---@type string,string,string
-    local possessive, subject, object
-    if pronouns == "their" then
-        possessive = "their"
-        subject = "they"
-        object = "them"
-    elseif pronouns == "male" then
-        possessive = "his"
-        subject = "he"
-        object = "him"
-    elseif pronouns == "female" then
-        possessive = "her"
-        subject = "she"
-        object = "her"
-    end
 
-    game.print(my_name .. " " .. string.gsub(string.gsub(string.gsub(biter_memoir, "PRONOUN_POSSESSIVE", possessive), "PRONOUN_SUBJECT", subject), "PRONOUN_OBJECT", object))
+    ---@type LocalisedString
+    local message = {
+        "biter-memoirs."..math.random(1, 76),
+        my_name,
+        {pronouns.."-possesive"},
+        {pronouns.."-subject"},
+        {pronouns.."-object"},
+    }
+
+    game.print(message)
 end
