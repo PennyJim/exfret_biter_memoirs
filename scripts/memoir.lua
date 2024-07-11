@@ -31,9 +31,9 @@ function show_memoir(event)
     local message = {
         locale_key,
         my_name,
-        {pronouns.."-possesive"},
-        {pronouns.."-subject"},
-        {pronouns.."-object"},
+        {"biter-pronouns."..pronouns.."-possesive"},
+        {"biter-pronouns."..pronouns.."-subject"},
+        {"biter-pronouns."..pronouns.."-object"},
     }
 
     game.print(message)
