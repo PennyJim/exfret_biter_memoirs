@@ -26,21 +26,23 @@ local function ensure_globals()
 end
 
 ---@param entity LuaEntity
-function validate_unit(entity, unit_number)
+function validate_unit(entity)
     if not entity.valid then
+        local unit_number = entity.unit_number
         if unit_number ~= nil then
-            global.unit_info[entity.unit_number] = nil
+            global.unit_info[unit_number] = nil
         end
         return
     elseif entity.type ~= "unit" then
         return
     end
+    local unit_number = entity.unit_number --[[@as integer]]
 
     if global.unit_info[entity.unit_number] == nil then
         initialize_unit({entity = entity, keep_hidden = true})
     end
 
-    local table_info = global.unit_info[entity.unit_number]
+    local table_info = global.unit_info[unit_number]
 
     if table_info.name == nil then
         table_info.name = global.biter_names[math.random(1, #global.biter_names)]
