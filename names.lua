@@ -1,7 +1,7 @@
 ---@class MemoirGlobal
 ---@field biter_names string[]
 ---@field biter_name_pronouns table<string,"male"|"female"|"their"|"either">
----@field biter_memoirs string[]
+---@field biter_memoir_count integer
 ---@field biter_memoirs_special table<string,string>
 
 function add_names()
@@ -645,83 +645,8 @@ function add_names()
         ["Luca"] = "male"
     }
 
-    global.biter_memoirs = {
-        "was the only one to take the trash out back at base.",
-        "had a kid who wanted to be an engineer one day.",
-        "was hoping to run off with PRONOUN_POSSESSIVE lover in an expansion party tomorrow.",
-        "will never see PRONOUN_POSSESSIVE pet dog again.",
-        "was making an overhaul mod that will never see the light of day.",
-        "had hopes and dreams that PRONOUN_SUBJECT will never achieve.",
-        "was on the brink of a scientific discovery.",
-        "will be remembered for PRONOUN_POSSESSIVE long career in nest creep management.",
-        "was actually low-key a dick, but also felt deeply alone.",
-        "forgives you.",
-        "wishes you were playing on peaceful mode so that it didn't have to be this way.",
-        "is sorry to burden you with this chat message.",
-        "was saving up money to buy factorio themselves.",
-        "told mom that it would just be a second to do the raid and then PRONOUN_SUBJECT would be back.",
-        "had medical problems from the pollution.",
-        "wanted to be a pacifist but was conscripted into the biter attack group.",
-        "screamed as PRONOUN_SUBJECT met a painful death.",
-        "wishes there was a heaven for biters and not just a void of nothingness.",
-        "just wanted to visit the rocket crash site as a tourist.",
-        "was the last of a long line of silversmiths.",
-        "used to be happy since PRONOUN_SUBJECT just made friends with a worm back at base.",
-        "sorta wanted to die anyways, just not like this.",
-        "loved to take the crust off the bread before eating PRONOUN_POSSESSIVE PB & J's.",
-        "liked to listen to classical music.",
-        "was going to get married tomorrow.",
-        "wants you to tell the biters back at base that they are loved.",
-        "is understanding about your mistakes in life.",
-        "just wanted to chat.",
-        "wants you to know that you're loved, even if PRONOUN_SUBJECT aren't.",
-        "had a pet cat named Aria.",
-        "was writing a novel that will never be published.",
-        "forgot to take PRONOUN_POSSESSIVE dog for a walk and was planning to do it when PRONOUN_SUBJECT got back.",
-        "was wondering when you'd stop playing... when the pain would end...",
-        "doesn't wish this upon you even though you wished it upon them.",
-        "thinks of PRONOUN_POSSESSIVE pet hamster back at base in PRONOUN_POSSESSIVE final moments.",
-        "was vice president of the 'Charity for Free Biter Housing', which helped biters in unfortunate circumstances find a home.",
-        "left a secret love card for a worm back at base.",
-        "was looking forward to Christmas.",
-        "was about to finish a 50 hour work week and buy a house.",
-        "will never finish PRONOUN_POSSESSIVE model train set.",
-        "was going to visit PRONOUN_POSSESSIVE grandma this weekend.",
-        "was trying PRONOUN_POSSESSIVE best.",
-        "is disappointed in you, just like your parents.",
-        "wonders who will take care of PRONOUN_POSSESSIVE parrot now that PRONOUN_SUBJECT are gone.",
-        "rehabilitated stray kittens.",
-        "was the proud owner of a pet goat named bailey.",
-        "thinks of PRONOUN_POSSESSIVE wife, Anna in PRONOUN_POSSESSIVE dying moments... How will she explain this to the kids?",
-        "wonders if you know that you too are a biter beneath all that armor.",
-        "holds PRONOUN_POSSESSIVE friend's hand as PRONOUN_SUBJECT passes away.",
-        "was helping exfret out with the biter memoirs mod before PRONOUN_POSSESSIVE untimely doom.",
-        "is behind you.",
-        "had as PRONOUN_POSSESSIVE only hope in the world to become your pet biter, curled up next to the warmth of an assembler.",
-        "regrets not being able to compliment your beautiful eyes before PRONOUN_SUBJECT passed.",
-        "doesn't report to PRONOUN_POSSESSIVE job next day; no one notices.",
-        "was still on hold with the power company about a metering problem when they left this world.",
-        "was just trying to provide for PRONOUN_POSSESSIVE 9 children.",
-        "was looking forward to PRONOUN_POSSESSIVE birthday party tonight.",
-        "wanted to be a comedian, but now they can only be a corpse.",
-        "had a cheesecake in the fridge for later.",
-        "was a wonderful person who was kind to people and animals.",
-        "had just had leg surgery and was able to walk for the first time in months.",
-        "was recently elected mayor of their nest.",
-        "was excited to watch the finale of PRONOUN_POSSESSIVE favorite tv show today.",
-        "wonders if you realize that you're a monster.",
-        "was martyred.",
-        "tried their best and was found wanting.",
-        "is in Valhalla tonight for dinner... as the main course.",
-        "failed to reclaim their former glory.",
-        "dreamed of being a hero as a kid.",
-        "enjoyed walks by the ocean.",
-        "was scared of water, and terrified by fire.",
-        "had an acceptance letter from PRONOUN_POSSESSIVE dream university waiting to be read back home.",
-        "was a first-generation college student.",
-        "was relieved of PRONOUN_POSSESSIVE chronic back pain.",
-        "never had a sense of humor and was always made fun of for it."
-    }
+    --- The number here should match the highest locale number
+    global.biter_memoir_count = 75 + 1
 
     global.biter_memoirs_special = {
         ["EmilyFlambe"] = "Emily Flambe was streaming the final episode of her space exploration run when she was ruthlessly murdered.",
