@@ -324,7 +324,10 @@ function add_names()
         "Swifty",
         "Carolyn",
         "Ash",
-        "Luca"
+        "Luca",
+        "PennyJim",
+        "Fireball",
+        "GGs"
     }
 
     global.biter_name_pronouns = {
@@ -644,11 +647,14 @@ function add_names()
         ["Swifty"] = "either",
         ["Carolyn"] = "female",
         ["Ash"] = "male",
-        ["Luca"] = "male"
+        ["Luca"] = "male",
+        ["PennyJim"] = "either",
+        ["Fireball"] = "male",
+        ["GGs"] = "their"
     }
 
     --- The number here should match the highest locale number
-    global.biter_memoir_count = 75 + 1
+    global.biter_memoir_count = 100 + 1
 
     global.biter_memoirs_special = {
         ["EmilyFlambe"] = true,
@@ -673,5 +679,8 @@ function add_names()
         ["Earendel"] = true,
         ["Randall"] = true,
         ["Sun Tzu"] = true,
+        ["PennyJim"] = true,
+        ["Fireball"] = true,
+        ["GGs"] = true,
     }
 end
