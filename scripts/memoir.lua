@@ -34,7 +34,7 @@ function show_memoir(event)
     local message = {
         locale_key,
         my_name,
-        {"biter-pronouns."..pronouns.."-possesive"},
+        {"biter-pronouns."..pronouns.."-possessive"},
         {"biter-pronouns."..pronouns.."-subject"},
         {"biter-pronouns."..pronouns.."-object"},
     }
