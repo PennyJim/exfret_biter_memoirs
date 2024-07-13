@@ -652,7 +652,7 @@ function add_names()
     }
 
     --- The number here should match the highest locale number
-    global.biter_memoir_count = 100 + 1
+    global.biter_memoir_count = 100
 
     global.biter_memoirs_special = {
         ["EmilyFlambe"] = true,

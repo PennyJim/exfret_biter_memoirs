@@ -7,7 +7,8 @@
     "contact": "",
     "homepage": "",
     "dependencies": [
-        "base >= 1.0.0"
+        "base >= 1.0.0",
+		"? better-chat >= 0.3"
     ],
     "description": "Adds names to nearby biters and sometimes prints bits about their life to chat when they die."
 }
