@@ -15,7 +15,7 @@ function initialize_unit(event)
             surface = entity.surface_index,
             target = entity,
             alignment = "center",
-            vertical_alignment = "bottom",
+            vertical_alignment = "top",
             use_rich_text = true,
         }
     end

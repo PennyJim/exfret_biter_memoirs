@@ -58,7 +58,7 @@ function validate_unit(entity, unit_number)
             surface = entity.surface_index,
             target = entity,
             alignment = "center",
-            vertical_alignment = "bottom",
+            vertical_alignment = "top",
             use_rich_text = true,
         }
     end
