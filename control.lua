@@ -74,6 +74,10 @@ script.on_configuration_changed(function()
     game.print("Biter Memoirs: Mod configuration changed, loading names list.")
     add_names()
 
+    for unit_number, unit_table in pairs(global.unit_info) do
+        validate_unit(unit_table.entity, unit_number)
+    end
+
     ensure_globals()
 end)
 
