@@ -88,22 +88,32 @@ end)
 
 ---@param event EventData.on_entity_died
 script.on_event(defines.events.on_entity_died, function(event)
-    validate_unit(event.entity, event.entity.unit_number)
+    local entity= event.entity
+    local unit_number = entity.unit_number --[[@as integer]]
+    validate_unit(entity, unit_number)
 
-    if event.entity.type == "unit" then
-        local unit_number = event.entity.unit_number --[[@as integer]]
-        if global.unit_info[unit_number] ~= nil and global.unit_info[unit_number].show_name then
-            -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
-            if global.unit_info[unit_number] ~= nil and (global.unit_info[unit_number].name == "Pikachu" or global.unit_info[unit_number].name == "Pikachu2") then
-                show_memoir(event)
-            elseif game.tick - global.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value then
-                show_memoir(event)
-            end
+    -- Ignore units without an entry in the table
+    local unit_table = global.unit_info[unit_number]
+    -- if not unit_table then return end -- Not necessary as validate_unit makes sure it exists
+    global.unit_info[unit_number] = nil
 
-            global.unit_info[unit_number] = nil
-        end
+    -- Don't do anything else for units that we don't handle names on
+    if not unit_table.show_name then return end
+
+    local do_memoir = (
+        game.tick - global.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value
+        and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value
+    )
+
+    -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
+    if do_memoir
+    or unit_table.name == "Pikachu"
+    or unit_table.name == "Pikachu2" then
+        show_memoir(event)
     end
-end)
+end, {
+    {filter = "type", type = "unit"}
+})
 
 -- ---@param event EventData.on_tick
 -- script.on_event(defines.events.on_tick, function(event)
