@@ -45,10 +45,11 @@ function show_memoir(event)
     end
 
     if has_better_chat then
-        -- Every time I use this remote, I realize I hate all
-        -- all the arguments and it should be a table parameter,
-        -- but I don't want to make that breaking change --@PennyJim
-        remote.call("better-chat", "send", message, nil, "global", nil, false)
+        remote.call("better-chat", "send", {
+            message = message,
+            send_level = "global",
+            clear = false,
+        })
     else
         game.print(message)
     end
