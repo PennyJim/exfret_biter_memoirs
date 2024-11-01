@@ -13,7 +13,15 @@ storage = {}
 ---@field name string
 ---@field entity LuaEntity
 ---@field birth integer
----@field nametag_id integer? The id of its render object if it has one
+---@field nametag? LuaRenderObject
+
+---@class unit_info
+local dep = {
+---@deprecated use `nametag`
+---@see unit_info.nametag
+---@see LuaRendering.get_object_by_id
+    nametag_id = 0
+}
 
 local function ensure_globals()
     if storage.last_memoir_tick == nil then
@@ -51,8 +59,8 @@ function validate_unit(entity, unit_number)
     if not table_info.birth then
         table_info.birth = game.tick
     end
-    if table_info.show_name and not table_info.nametag_id then
-        table_info.nametag_id = rendering.draw_text{
+    if table_info.show_name and not table_info.nametag then
+        table_info.nametag = rendering.draw_text{
             text = table_info.name,
             color = {1,1,1},
             surface = entity.surface_index,

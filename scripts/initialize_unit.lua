@@ -4,12 +4,12 @@ function initialize_unit(event)
     if entity.type ~= "unit" then return end
 
     local biter_name = storage.biter_names[math.random(1, #storage.biter_names)]
-    local show_name, renderID = false, nil
+    local show_name, renderObj = false, nil
 
     if (not event.keep_hidden)
     and math.random() < settings.global["exfret-biter-memoirs-name-chance"].value then
         show_name = true
-        renderID = rendering.draw_text{
+        renderObj = rendering.draw_text{
             text = biter_name,
             color = {1,1,1},
             surface = entity.surface_index,
@@ -24,6 +24,7 @@ function initialize_unit(event)
         name = biter_name,
         show_name = show_name,
         entity = event.entity,
-        birth = game.tick
+        birth = game.tick,
+        nametag = renderObj
     }
 end
