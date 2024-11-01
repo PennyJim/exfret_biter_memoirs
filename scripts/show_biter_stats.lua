@@ -1,5 +1,5 @@
 function show_biter_gui(player, biter)
-    local biter_name = global.unit_info[biter.unit_number].name
+    local biter_name = storage.unit_info[biter.unit_number].name
 
     local wellbeing = "Happy and Carefree"
     if biter.surface.get_pollution(biter.position) > 0 then
@@ -20,6 +20,6 @@ function show_biter_gui(player, biter)
 
     player.gui.screen.add({type = "frame", name = "biter_stats_panel", caption = "Biter Stats Panel", direction = "vertical"})
     player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_name", caption = "Biter name: " .. biter_name})
-    player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_age", caption = "Age: " .. math.floor(math.pow(((game.tick - global.unit_info[biter.unit_number].birth) / 500), 2/3)) .. " biter years"})
+    player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_age", caption = "Age: " .. math.floor(math.pow(((game.tick - storage.unit_info[biter.unit_number].birth) / 500), 2/3)) .. " biter years"})
     player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_wellbeing", caption = "Wellbeing: " .. wellbeing})
 end

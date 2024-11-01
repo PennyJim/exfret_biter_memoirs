@@ -7,7 +7,7 @@
 ---@alias support_pronouns "male"|"female"|"their"
 
 function add_names()
-    global.biter_names = {
+    storage.biter_names = {
         "George",
         "Sue",
         "Mary",
@@ -327,9 +327,10 @@ function add_names()
         "Luca",
         "PennyJim",
         "Fireball",
+        "[item=depleted-uranium-fuel-cell,quality=legendary]",
     }
 
-    global.biter_name_pronouns = {
+    storage.biter_name_pronouns = {
         ["George"] = "male",
         ["Sue"] = "female",
         ["Mary"] = "female",
@@ -649,12 +650,13 @@ function add_names()
         ["Luca"] = "male",
         ["PennyJim"] = "either",
         ["Fireball"] = "male",
+        ["[item=depleted-uranium-fuel-cell,quality=legendary]"] = "either",
     }
 
     --- The number here should match the highest locale number
-    global.biter_memoir_count = 100
+    storage.biter_memoir_count = 100
 
-    global.biter_memoirs_special = {
+    storage.biter_memoirs_special = {
         ["EmilyFlambe"] = true,
         ["Nefrums"] = true,
         ["Nilaus"] = true,

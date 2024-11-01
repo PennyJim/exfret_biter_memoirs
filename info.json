@@ -1,14 +1,14 @@
 {
     "name": "exfret_biter_memoirs",
-    "version": "1.0.6",
-    "factorio_version": "1.1",
+    "version": "1.1.0",
+    "factorio_version": "2.0",
     "title": "Biter Memoirs",
     "author": "exfret, PennyJim",
     "contact": "",
     "homepage": "",
     "dependencies": [
-        "base >= 1.0.0",
-        "? better-chat >= 0.3"
+        "base >= 2.0.0",
+        "? better-chat >= 0.3.2"
     ],
     "description": "Adds names to nearby biters and sometimes prints bits about their life to chat when they die."
 }

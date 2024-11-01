@@ -7,23 +7,23 @@ function show_memoir(event)
 
     ---@type string
     local my_name
-    if global.unit_info[unit_number] ~= nil then
-        my_name = global.unit_info[unit_number].name
+    if storage.unit_info[unit_number] ~= nil then
+        my_name = storage.unit_info[unit_number].name
     end
     if my_name == nil then
-        my_name = global.biter_names[math.random(#global.biter_names)]
+        my_name = storage.biter_names[math.random(#storage.biter_names)]
     end
 
     ---@type string
     local locale_key
     -- Test if the biter has a special memoir
-    if global.biter_memoirs_special[my_name] then
+    if storage.biter_memoirs_special[my_name] then
         locale_key = "biter-memoirs-special."..my_name
     else
-        locale_key = "biter-memoirs."..math.random(global.biter_memoir_count)
+        locale_key = "biter-memoirs."..math.random(storage.biter_memoir_count)
     end
 
-    local pronouns = global.biter_name_pronouns[my_name] or "their"
+    local pronouns = storage.biter_name_pronouns[my_name] or "their"
     if pronouns == "either" then
         ---@type support_pronouns[]
         local possible_pronouns = {"male", "female", "their"}
@@ -45,10 +45,11 @@ function show_memoir(event)
     end
 
     if has_better_chat then
-        -- Every time I use this remote, I realize I hate all
-        -- all the arguments and it should be a table parameter,
-        -- but I don't want to make that breaking change --@PennyJim
-        remote.call("better-chat", "send", message, nil, "global", nil, false)
+        remote.call("better-chat", "send", {
+            message = message,
+            send_level = "global",
+            clear = false,
+        })
     else
         game.print(message)
     end
