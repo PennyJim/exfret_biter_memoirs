@@ -3,7 +3,7 @@ function initialize_unit(event)
     local entity = event.entity
     if entity.type ~= "unit" then return end
 
-    local biter_name = global.biter_names[math.random(1, #global.biter_names)]
+    local biter_name = storage.biter_names[math.random(1, #storage.biter_names)]
     local show_name, renderID = false, nil
 
     if (not event.keep_hidden)
@@ -20,7 +20,7 @@ function initialize_unit(event)
         }
     end
 
-    global.unit_info[entity.unit_number--[[@as integer]]] = {
+    storage.unit_info[entity.unit_number--[[@as integer]]] = {
         name = biter_name,
         show_name = show_name,
         entity = event.entity,

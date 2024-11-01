@@ -6,7 +6,7 @@ require("scripts/memoir")
 ---@class MemoirGlobal
 ---@field last_memoir_tick integer
 ---@field unit_info table<integer,unit_info>
-global = {}
+storage = {}
 
 ---@class unit_info
 ---@field show_name boolean
@@ -16,12 +16,12 @@ global = {}
 ---@field nametag_id integer? The id of its render object if it has one
 
 local function ensure_globals()
-    if global.last_memoir_tick == nil then
-        global.last_memoir_tick = 0
+    if storage.last_memoir_tick == nil then
+        storage.last_memoir_tick = 0
     end
 
-    if global.unit_info == nil then
-        global.unit_info = {}
+    if storage.unit_info == nil then
+        storage.unit_info = {}
     end
 end
 
@@ -31,11 +31,11 @@ function validate_unit(entity, unit_number)
 
     --- Remove entry if the entity is invalid in any way
     if not entity or not entity.valid or entity.type ~= "unit" then
-        global.unit_info[unit_number] = nil
+        storage.unit_info[unit_number] = nil
         return
     end
 
-    local table_info = global.unit_info[unit_number]
+    local table_info = storage.unit_info[unit_number]
     --- Initialize the unit if it's valid, but has no entry
     if not table_info then
         initialize_unit({entity = entity, keep_hidden = true})
@@ -43,7 +43,7 @@ function validate_unit(entity, unit_number)
     end
 
     if not table_info.name then
-        table_info.name = global.biter_names[math.random(1, #global.biter_names)]
+        table_info.name = storage.biter_names[math.random(1, #storage.biter_names)]
     end
     if not table_info.entity then
         table_info.entity = entity
@@ -74,7 +74,7 @@ script.on_configuration_changed(function()
     game.print("Biter Memoirs: Mod configuration changed, loading names list.")
     add_names()
 
-    for unit_number, unit_table in pairs(global.unit_info) do
+    for unit_number, unit_table in pairs(storage.unit_info) do
         validate_unit(unit_table.entity, unit_number)
     end
 
@@ -93,15 +93,15 @@ script.on_event(defines.events.on_entity_died, function(event)
     validate_unit(entity, unit_number)
 
     -- Ignore units without an entry in the table
-    local unit_table = global.unit_info[unit_number]
+    local unit_table = storage.unit_info[unit_number]
     -- if not unit_table then return end -- Not necessary as validate_unit makes sure it exists
-    global.unit_info[unit_number] = nil
+    storage.unit_info[unit_number] = nil
 
     -- Don't do anything else for units that we don't handle names on
     if not unit_table.show_name then return end
 
     local do_memoir = (
-        game.tick - global.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value
+        game.tick - storage.last_memoir_tick >= settings.global["exfret-biter-memoirs-min-message-delay"].value
         and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value
     )
 
