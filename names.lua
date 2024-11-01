@@ -327,6 +327,7 @@ function add_names()
         "Luca",
         "PennyJim",
         "Fireball",
+        "[item=depleted-uranium-fuel-cell,quality=legendary]",
     }
 
     storage.biter_name_pronouns = {
@@ -649,6 +650,7 @@ function add_names()
         ["Luca"] = "male",
         ["PennyJim"] = "either",
         ["Fireball"] = "male",
+        ["[item=depleted-uranium-fuel-cell,quality=legendary]"] = "either",
     }
 
     --- The number here should match the highest locale number
