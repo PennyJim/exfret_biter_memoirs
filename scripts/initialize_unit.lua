@@ -3,7 +3,7 @@ function initialize_unit(event)
     local entity = event.entity
     if entity.type ~= "unit" then return end
 
-    local biter_name = storage.biter_names[math.random(1, #storage.biter_names)]
+    local biter_name = storage.biter_names[math.random(#storage.biter_names)]
     local show_name, renderObj = false, nil
 
     if (not event.keep_hidden)
