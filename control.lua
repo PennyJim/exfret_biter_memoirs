@@ -102,6 +102,7 @@ script.on_event(defines.events.on_entity_died, function(event)
 
     -- Ignore units without an entry in the table
     local unit_table = storage.unit_info[unit_number]
+    -- if not unit_table then return end -- Not necessary as validate_unit makes sure it exists
 
     -- Don't do anything else for units that we don't handle names on
     if not unit_table.show_name then return end
@@ -118,7 +119,6 @@ script.on_event(defines.events.on_entity_died, function(event)
         show_memoir(event)
     end
 
-    -- if not unit_table then return end -- Not necessary as validate_unit makes sure it exists
     storage.unit_info[unit_number] = nil
 end, {
     {filter = "type", type = "unit"}

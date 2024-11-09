@@ -1,5 +1,6 @@
 ---@class MemoirGlobal
 ---@field biter_names string[]
+---@field biter_name_count integer
 ---@field biter_name_pronouns table<string,support_pronouns|"either">
 ---@field biter_memoir_count integer
 ---@field biter_memoirs_special table<string,true>
@@ -371,6 +372,8 @@ function add_names()
         "Harmony",
         "Daphne",
     }
+    -- Don't calculate this so often, just store it.
+    storage.biter_name_count = #storage.biter_names
 
     storage.biter_name_pronouns = {
         ["George"] = "male",

@@ -11,17 +11,10 @@ function show_memoir(event)
         my_name = storage.unit_info[unit_number].name
     end
     if my_name == nil then
-        my_name = storage.biter_names[math.random(#storage.biter_names)]
+        my_name = storage.biter_names[math.random(storage.biter_name_count)]
     end
 
-    ---@type string
-    local locale_key
-    -- Test if the biter has a special memoir
-    if storage.biter_memoirs_special[my_name] then
-        locale_key = "biter-memoirs-special."..my_name
-    else
-        locale_key = "biter-memoirs."..math.random(storage.biter_memoir_count)
-    end
+    local locale_index = math.random(storage.biter_memoir_count)
 
     local pronouns = storage.biter_name_pronouns[my_name] or "their"
     if pronouns == "either" then
@@ -31,12 +24,10 @@ function show_memoir(event)
     end
 
     ---@type LocalisedString
-    local message = {
-        locale_key,
-        my_name,
-        {"biter-pronouns."..pronouns.."-possessive"},
-        {"biter-pronouns."..pronouns.."-subject"},
-        {"biter-pronouns."..pronouns.."-object"},
+    local message = {"?",
+        {"biter-memoirs-special."..my_name, my_name},
+        {"biter-memoirs."..pronouns.."-"..locale_index, my_name},
+        {"biter-memoirs."..locale_index, my_name},
     }
 
     if has_better_chat == nil then
