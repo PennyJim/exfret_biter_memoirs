@@ -743,35 +743,6 @@ function add_names()
     --- The number here should match the highest locale number
     storage.biter_memoir_count = 116
 
-    storage.biter_memoirs_special = {
-        ["EmilyFlambe"] = true,
-        ["Nefrums"] = true,
-        ["Nilaus"] = true,
-        ["Fermat"] = true,
-        ["Scoob"] = true,
-        ["friendcalledfive"] = true,
-        ["Factorio"] = true,
-        ["Good Boi"] = true,
-        ["Pikachu"] = true,
-        ["Pikachu2"] = true,
-        ["Varik"] = true,
-        ["Asher"] = true,
-        ["DoshDoshington"] = true,
-        ["Elon Musk"] = true,
-        ["Carl Sagan"] = true,
-        ["Lebothegizebo"] = true,
-        ["BlackATM"] = true,
-        ["Cobai"] = true,
-        ["sassxolotl"] = true,
-        ["Earendel"] = true,
-        ["Randall"] = true,
-        ["Sun Tzu"] = true,
-        ["PennyJim"] = true,
-        ["Fireball"] = true,
-        ["GGs"] = true,
-        ["MeepleCat"] = true,
-        ["nuker_man"] = true,
-        ["Mr. Whitebug"] = true,
-        ["Skullbearer"] = true,
-    }
+    ---@deprecated Just use fallback syntax
+    storage.biter_memoirs_special = nil
 end
