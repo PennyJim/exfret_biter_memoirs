@@ -79,7 +79,7 @@ script.on_init(function ()
 end)
 
 script.on_configuration_changed(function()
-    game.print("Biter Memoirs: Mod configuration changed, loading names list.")
+    game.print{"biter-memoirs.reload-names"}
     add_names()
 
     for unit_number, unit_table in pairs(storage.unit_info) do
