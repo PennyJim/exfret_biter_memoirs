@@ -10,7 +10,7 @@ function initialize_unit(event)
     and math.random() < settings.global["exfret-biter-memoirs-name-chance"].value then
         show_name = true
         renderObj = rendering.draw_text{
-            text = biter_name,
+            text = biter_name.name,
             color = {1,1,1},
             surface = entity.surface_index,
             target = entity,

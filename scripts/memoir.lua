@@ -5,18 +5,18 @@ local has_better_chat
 function show_memoir(event)
     local unit_number = event.entity.unit_number --[[@as integer]]
 
-    ---@type string
-    local my_name
+    ---@type name_info
+    local name
     if storage.unit_info[unit_number] ~= nil then
-        my_name = storage.unit_info[unit_number].name
+        name = storage.unit_info[unit_number].name
     end
-    if my_name == nil then
-        my_name = storage.biter_names[math.random(storage.biter_name_count)]
+    if not name then
+        name = storage.biter_names[math.random(storage.biter_name_count)]
     end
 
     local locale_index = math.random(storage.biter_memoir_count)
 
-    local pronouns = storage.biter_name_pronouns[my_name] or "their"
+    local pronouns = name.pronouns
     if pronouns == "either" then
         ---@type support_pronouns[]
         local possible_pronouns = {"male", "female", "their"}
@@ -25,10 +25,15 @@ function show_memoir(event)
 
     ---@type LocalisedString
     local message = {"?",
-        {"biter-memoirs-special."..my_name, my_name},
-        {"biter-memoirs."..pronouns.."-"..locale_index, my_name},
-        {"biter-memoirs."..locale_index, my_name},
+        -- Should be defined in the name_info, but if they exist at all, we should use them.
+        {"biter-memoirs-special."..name.name, name.name},
+        -- Try the pronoun'd version before using the ungendered version
+        {"biter-memoirs."..pronouns.."-"..locale_index, name.name},
+        {"biter-memoirs."..locale_index, name.name},
     }
+    if name.special_memoir then
+        message = name.special_memoir
+    end
 
     if has_better_chat == nil then
         local better_chat = remote.interfaces["better-chat"]

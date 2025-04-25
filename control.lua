@@ -10,10 +10,11 @@ storage = {}
 
 ---@class unit_info
 ---@field show_name boolean
----@field name string
+---@field name name_info
 ---@field entity LuaEntity
 ---@field birth integer
 ---@field nametag? LuaRenderObject
+---@field nametag_id? integer Only to make it optional
 
 ---@class unit_info
 local dep = {
@@ -73,14 +74,14 @@ function validate_unit(entity, unit_number)
 end
 
 script.on_init(function ()
-    add_names()
+    load_defaults()
 
     ensure_globals()
 end)
 
 script.on_configuration_changed(function()
     game.print{"biter-memoirs.reload-names"}
-    add_names()
+    load_defaults()
 
     for unit_number, unit_table in pairs(storage.unit_info) do
         validate_unit(unit_table.entity, unit_number)
