@@ -36,8 +36,11 @@ function show_memoir(unit_info)
             message = message,
             send_level = "global",
             clear = false,
+            color = name.color
         })
     else
-        game.print(message)
+        game.print(message, {
+            color = name.color
+        })
     end
 end

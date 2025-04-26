@@ -7,6 +7,7 @@
 ---@field name string
 ---@field pronouns support_pronouns|"either"
 ---@field special_memoir? LocalisedString
+---@field color? Color
 
 ---@alias support_pronouns "male"|"female"|"their"
 
