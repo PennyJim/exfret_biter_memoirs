@@ -11,6 +11,7 @@
 
 ---@alias support_pronouns "male"|"female"|"their"
 
+---@nodiscard
 ---@return name_info[]
 function default_names()
     ---@type name_info[]

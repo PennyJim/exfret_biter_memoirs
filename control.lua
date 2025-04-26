@@ -2,6 +2,7 @@ require("names")
 require("scripts/show_biter_stats")
 require("scripts/initialize_unit")
 require("scripts/memoir")
+require("scripts/remote_interface")
 
 ---@class MemoirGlobal
 ---@field last_memoir_tick integer
