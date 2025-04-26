@@ -1,5 +1,7 @@
+---@param player LuaPlayer
+---@param biter LuaEntity
 function show_biter_gui(player, biter)
-    local biter_name = storage.unit_info[biter.unit_number].name
+    local unit_info = storage.unit_info[biter.unit_number--[[@as int]]]
 
     local wellbeing = "Happy and Carefree"
     if biter.surface.get_pollution(biter.position) > 0 then
@@ -18,8 +20,8 @@ function show_biter_gui(player, biter)
         wellbeing = "Desperate... will do anything... for fresh air"
     end
 
-    player.gui.screen.add({type = "frame", name = "biter_stats_panel", caption = "Biter Stats Panel", direction = "vertical"})
-    player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_name", caption = "Biter name: " .. biter_name})
-    player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_age", caption = "Age: " .. math.floor(math.pow(((game.tick - storage.unit_info[biter.unit_number].birth) / 500), 2/3)) .. " biter years"})
-    player.gui.screen.biter_stats_panel.add({type = "label", name = "biter_stats_panel_wellbeing", caption = "Wellbeing: " .. wellbeing})
+    local stats_panel = player.gui.screen.add({type = "frame", name = "biter_stats_panel", caption = "Biter Stats Panel", direction = "vertical"})
+    stats_panel.add({type = "label", name = "biter_stats_panel_name", caption = "Biter name: " .. unit_info.name.name})
+    stats_panel.add({type = "label", name = "biter_stats_panel_age", caption = "Age: " .. math.floor(math.pow(((game.tick - unit_info.birth) / 500), 2/3)) .. " biter years"})
+    stats_panel.add({type = "label", name = "biter_stats_panel_wellbeing", caption = "Wellbeing: " .. wellbeing})
 end

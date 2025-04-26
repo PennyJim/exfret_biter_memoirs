@@ -1,19 +1,9 @@
 ---@type boolean?
 local has_better_chat
 
----@param event EventData.on_entity_died
-function show_memoir(event)
-    local unit_number = event.entity.unit_number --[[@as integer]]
-
-    ---@type name_info
-    local name
-    if storage.unit_info[unit_number] ~= nil then
-        name = storage.unit_info[unit_number].name
-    end
-    if not name then
-        name = storage.biter_names[math.random(storage.biter_name_count)]
-    end
-
+---@param unit_info unit_info
+function show_memoir(unit_info)
+    local name = unit_info.name
     local locale_index = math.random(storage.biter_memoir_count)
 
     local pronouns = name.pronouns
@@ -26,6 +16,7 @@ function show_memoir(event)
     ---@type LocalisedString
     local message = {"?",
         -- Should be defined in the name_info, but if they exist at all, we should use them.
+        -- This also means we don't have to migrate the old names to all have a special_memoir of exactly this
         {"biter-memoirs-special."..name.name, name.name},
         -- Try the pronoun'd version before using the ungendered version
         {"biter-memoirs."..pronouns.."-"..locale_index, name.name},
@@ -37,7 +28,7 @@ function show_memoir(event)
 
     if has_better_chat == nil then
         local better_chat = remote.interfaces["better-chat"]
-        has_better_chat = better_chat and better_chat["send"]
+        has_better_chat = better_chat and better_chat["send"] or false
     end
 
     if has_better_chat then

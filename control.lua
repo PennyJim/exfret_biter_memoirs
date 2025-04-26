@@ -103,6 +103,7 @@ script.on_event(defines.events.on_entity_died, function(event)
 
     -- Ignore units without an entry in the table
     local unit_table = storage.unit_info[unit_number]
+    storage.unit_info[unit_number] = nil
     -- if not unit_table then return end -- Not necessary as validate_unit makes sure it exists
 
     -- Don't do anything else for units that we don't handle names on
@@ -113,14 +114,9 @@ script.on_event(defines.events.on_entity_died, function(event)
         and math.random() < settings.global["exfret-biter-memoirs-message-chance"].value
     )
 
-    -- I just want to make very sure the pikachu memoir shows up, so it's hardcoded for now
-    if do_memoir
-    or unit_table.name == "Pikachu"
-    or unit_table.name == "Pikachu2" then
-        show_memoir(event)
+    if do_memoir then
+        show_memoir(unit_table)
     end
-
-    storage.unit_info[unit_number] = nil
 end, {
     {filter = "type", type = "unit"}
 })
