@@ -395,14 +395,27 @@ function default_names()
     }
 end
 
+---@nodiscard
+---@param count integer
+---@return LocalisedString[]
+function default_memoirs(count)
+    ---@type LocalisedString[]
+    local memoirs = {}
+    for i = 1, count do
+        memoirs[i] = {"biter-memoirs."..i}
+    end
+    return memoirs
+end
+
 function load_defaults()
     -- All the names, pronouns, and special memoirs
     storage.biter_names = default_names()
     -- Don't calculate this so often, just store it.
     storage.biter_name_count = #storage.biter_names
 
-    --- The number here should match the highest locale number
+    --- The numbers here should match the highest locale number
     storage.biter_memoir_count = 116
+    storage.biter_memoirs = default_memoirs(116)
 
     ---@deprecated Now contained in name_info
     ---@type nil
