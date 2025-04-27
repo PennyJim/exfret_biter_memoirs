@@ -9,5 +9,18 @@
         "base >= 2.0.0",
         "? better-chat >= 0.3.2"
     ],
-    "description": "Adds names to nearby biters and sometimes prints bits about their life to chat when they die."
+    "description": "Adds names to nearby biters and sometimes prints bits about their life to chat when they die.",
+    "package": {
+        "ignore": [
+            "gallery/**"
+        ],
+        "gallery": [
+            "gallery/Fleet-of-named.png",
+            "gallery/Memoir-examples.png",
+            "gallery/Colored-name.png"
+        ],
+        "readme": "README.md",
+        "sync_portal_details": true,
+        "prune_gallery": true
+    }
 }
