@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: ????
+  Changes:
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2025-04-27
+  Features:
+    - Names can now have an associated color
+    - There is now an interface so you can now:
+      - Get/set and add/remove the Memoir array
+      - Get/set and add/remove the Name array
+      - Get the defaults
+      - Generate your own standard memoir array with a different number
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2024.11.01
+  Features:
+    - Ported to 2.0
+    - More female names
+    - A few more memoirs
+  Bugfixes:
+    - Fixed that incorrect biter names were being used for the memoirs
+---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 2024.10.01
+---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 2024.08.01
+  Bugfixes:
+    - Actually remove invalid units from global
+---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2024.02.28
+  Features:
+    - More names/memoirs
+    - Ability to see information about biters
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2024.02.14
+  Features:
+    - Added pronoun support
+    - Added custom memoirs for biters with certain names
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2024.02.14
+  Features:
+    - Separated out files to make collaboration easier
+    - Added a few more names and memoirs
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2024.02.09
+  Features:
+    - Added a changelog
+    - Added new names
+    - Added new messages
+    - You can now change the biter name chances and message chances in the mod settings
+  Changes:
+    - Biters are now only named with 25% chance by default
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2024.02.09
+  Features:
+    - Initial version
