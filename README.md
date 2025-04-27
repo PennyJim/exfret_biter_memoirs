@@ -9,6 +9,7 @@ Inspired by https://xkcd.com/873/
 * You can add this to existing saves, or remove it mid-save
 * It should be compatible with all mods
 * An ever-growing list of names and stories
+* The ability to customize the lists with a remote interface
 
 ## Getting Started
 
@@ -19,8 +20,8 @@ Inspired by https://xkcd.com/873/
 
 ### Installing
 
-* Download from the MOD portal
-* Download from GITHUB
+* Download from the [MOD portal](https://mods.factorio.com/mod/exfret_biter_memoirs)
+* Download from [GITHUB](https://github.com/PennyJim/exfret_biter_memoirs)
 
 ## Remote Interface
 #### Name: `"biter-memoirs"`

@@ -4,8 +4,7 @@
     "factorio_version": "2.0",
     "title": "Biter Memoirs",
     "author": "exfret, PennyJim",
-    "contact": "",
-    "homepage": "",
+    "contact": "@pennyjim (discord)",
     "dependencies": [
         "base >= 2.0.0",
         "? better-chat >= 0.3.2"
