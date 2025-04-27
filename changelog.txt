@@ -3,6 +3,11 @@ Version: 1.2.0
 Date: ????
   Features:
     - Names can now have an associated color
+    - There is now an interface so you can now:
+      - Get/set and add/remove the Memoir array
+      - Get/set and add/remove the Name array
+      - Get the defaults
+      - Generate your own standard memoir array with a different number
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2024.11.01
