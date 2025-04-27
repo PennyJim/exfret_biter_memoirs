@@ -51,6 +51,12 @@ local function validate_array_contiguity(array, validate_func)
 	return expected_index
 end
 
+---@diagnostic disable-next-line: no-unknown
+if __DebugAdapter then
+	check_contiguity = validate_array_contiguity
+	require("tests/check_contiguity")
+end
+
 remote.add_interface("biter-memoirs", {
 	--MARK: Get Defaults & Counts
 
