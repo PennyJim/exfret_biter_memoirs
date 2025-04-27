@@ -1,6 +1,7 @@
 ---@class MemoirGlobal
 ---@field biter_names name_info[]
 ---@field biter_name_count integer
+---@field biter_memoirs MemoirString[]
 ---@field biter_memoir_count integer
 
 ---@class name_info
@@ -21,11 +22,41 @@ PRONOUNS = {
     female = 2,
 }
 
+--- The name will get prepended if it's a string
+--- If it's a LocalisedString on the other hand,
+--- the first two parameters (aka the 2nd and 3rd indexes)
+--- *Will* get squashed by the name and pronoun id.
+---@alias MemoirString
+---| string
+---| {
+---     [1]:string, -- Locale Key
+---     [2]:string?, -- The name (will be autofilled)
+---     [3]:supported_pronouns?, -- The pronoun (will be autofilled)
+---     [4]:LocalisedString, -- Etc
+---     [5]:LocalisedString, -- Etc
+---     [6]:LocalisedString, -- Etc
+---     [7]:LocalisedString, -- Etc
+---     [8]:LocalisedString, -- Etc
+---     [9]:LocalisedString, -- Etc
+---     [10]:LocalisedString, -- Etc
+---     [11]:LocalisedString, -- Etc
+---     [12]:LocalisedString, -- Etc
+---     [13]:LocalisedString, -- Etc
+---     [14]:LocalisedString, -- Etc
+---     [15]:LocalisedString, -- Etc
+---     [16]:LocalisedString, -- Etc
+---     [17]:LocalisedString, -- Etc
+---     [18]:LocalisedString, -- Etc
+---     [19]:LocalisedString, -- Etc
+---     [20]:LocalisedString, -- Etc
+---     [21]:LocalisedString, -- Etc
+--- }
+
 ---@nodiscard
 ---@return name_info[]
 function default_names()
     ---@type name_info[]
-    return {
+    return { --MARK: Names
         {pronouns = PRONOUNS.male,   name = "George"},
         {pronouns = PRONOUNS.female, name = "Sue"},
         {pronouns = PRONOUNS.female, name = "Mary"},
@@ -397,9 +428,9 @@ end
 
 ---@nodiscard
 ---@param count integer
----@return LocalisedString[]
-function default_memoirs(count)
-    ---@type LocalisedString[]
+---@return MemoirString[]
+function default_memoirs(count) -- MARK: Memoirs
+    ---@type MemoirString[]
     local memoirs = {}
     for i = 1, count do
         memoirs[i] = {"biter-memoirs."..i}
@@ -407,6 +438,8 @@ function default_memoirs(count)
     return memoirs
 end
 
+-- MARK: Defaults
+DEFAULT_MEMOIR_COUNT = 116
 function load_defaults()
     -- All the names, pronouns, and special memoirs
     storage.biter_names = default_names()
@@ -414,8 +447,8 @@ function load_defaults()
     storage.biter_name_count = #storage.biter_names
 
     --- The numbers here should match the highest locale number
-    storage.biter_memoir_count = 116
-    storage.biter_memoirs = default_memoirs(116)
+    storage.biter_memoir_count = DEFAULT_MEMOIR_COUNT
+    storage.biter_memoirs = default_memoirs(DEFAULT_MEMOIR_COUNT)
 
     ---@deprecated Now contained in name_info
     ---@type nil
