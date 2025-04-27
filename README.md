@@ -9,7 +9,6 @@ Inspired by https://xkcd.com/873/
 * You can add this to existing saves, or remove it mid-save
 * It should be compatible with all mods
 * An ever-growing list of names and stories
-* (WIP) Relationships between the biters that you can learn about and love (before ruthlessly murdering them)
 
 ## Getting Started
 
@@ -62,14 +61,11 @@ Functions:
 
 ## Help
 
-<Discord [Link](https://discord.gg/ebHX7Yek9T)>
+Just ping me (@pennyjim or <@214446390552690689>) on the (Officially) [Unofficial Factorio Discord](https://discord.gg/factorio).
+
 
 ## Authors
 
-exfret
+exfret, PennyJim
 
 Contributors: Cobai
-
-## Version History
-
-See changelog.txt
