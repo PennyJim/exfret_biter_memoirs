@@ -78,6 +78,10 @@ remote.add_interface("biter-memoirs", {
 		return storage.biter_memoir_count
 	end,
 
+	get_pronouns = function ()
+		return PRONOUNS
+	end,
+
 	--MARK: Get/Set
 
 	---@nodiscard
