@@ -6,11 +6,11 @@
 
 ---@class name_info
 ---@field name string
----@field pronouns supported_pronouns
+---@field pronouns pronoun_id
 ---@field special_memoir? LocalisedString
 ---@field color? Color
 
----@enum supported_pronouns
+---@enum pronoun_id
 PRONOUNS = {
     -- Will resolve to any of the valid pronouns
     any = -2,
@@ -31,7 +31,7 @@ PRONOUNS = {
 ---| {
 ---     [1]:string, -- Locale Key
 ---     [2]:string?, -- The name (will be autofilled)
----     [3]:supported_pronouns?, -- The pronoun (will be autofilled)
+---     [3]:pronoun_id?, -- The pronoun (will be autofilled)
 ---     [4]:LocalisedString, -- Etc
 ---     [5]:LocalisedString, -- Etc
 ---     [6]:LocalisedString, -- Etc
