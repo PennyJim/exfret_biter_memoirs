@@ -11,7 +11,7 @@ function initialize_unit(event)
         show_name = true
         renderObj = rendering.draw_text{
             text = biter_name.name,
-            color = {1,1,1},
+            color = biter_name.color or {1,1,1},
             surface = entity.surface_index,
             target = entity,
             alignment = "center",

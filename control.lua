@@ -62,9 +62,10 @@ function validate_unit(entity, unit_number)
         table_info.birth = game.tick
     end
     if table_info.show_name and not table_info.nametag then
+        local name = table_info.name
         table_info.nametag = rendering.draw_text{
-            text = table_info.name,
-            color = {1,1,1},
+            text = name.name,
+            color = name.color or {1,1,1},
             surface = entity.surface_index,
             target = entity,
             alignment = "center",
