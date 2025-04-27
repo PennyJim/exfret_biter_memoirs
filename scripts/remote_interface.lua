@@ -33,20 +33,22 @@ end
 
 ---@param array any[]
 ---@param validate_func fun(any:any)
+---@return integer array_size Because if we're counting anyways, might as well return that count
 local function validate_array_contiguity(array, validate_func)
-	local expected_index = 1
+	local expected_index = 0
 	for index, value in pairs(array) do
 		if type(index) ~= "number" then
 			error("Array had a non-number index. Is it missing a pair of brackets?")
 		end
 
+		expected_index = expected_index + 1
 		if index ~= expected_index then
 			error("Array indexes don't rise continually. Sparse arrays are not supported")
 		end
-		expected_index = expected_index + 1
 
 		validate_func(value)
 	end
+	return expected_index
 end
 
 remote.add_interface("biter-memoirs", {
@@ -79,9 +81,12 @@ remote.add_interface("biter-memoirs", {
 	end,
 	---@param names name_info[]
 	set_names = function (names)
-		validate_array_contiguity(names, validate_name)
+		local count = validate_array_contiguity(names, validate_name)
+		if count == 0 then
+			log("Setting the names array to an empty array. If you do not add a name quickly, it'll crash.")
+		end
 		storage.biter_names = names
-		storage.biter_name_count = #names
+		storage.biter_name_count = count
 	end,
 
 	---@nodiscard
@@ -91,9 +96,12 @@ remote.add_interface("biter-memoirs", {
 	end,
 	---@param memoirs MemoirString[]
 	set_memoirs = function (memoirs)
-		validate_array_contiguity(memoirs, validate_memoir)
+		local count = validate_array_contiguity(memoirs, validate_memoir)
+		if count == 0 then
+			log("Setting the memoirs array to an empty array. If you do not add a memoir quickly, it'll crash.")
+		end
 		storage.biter_memoirs = memoirs
-		storage.biter_memoir_count = #memoirs
+		storage.biter_memoir_count = count
 	end,
 
 	--MARK: Add/Remove
