@@ -70,3 +70,5 @@ Just ping me (@pennyjim or <@214446390552690689>) on the (Officially) [Unofficia
 exfret, PennyJim
 
 Contributors: Cobai
+
+Translators: OC1024
